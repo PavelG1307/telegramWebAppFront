@@ -2,7 +2,7 @@ const url = 'http://localhost:3000/api/v1'
 const userId = 12345
 
 const data = document.createElement('.title')
-data.innerText = window.Telegram.WebApp.initDataUnsafe.first_name + ' ваши уведомления:'
+data.innerText = window.Telegram.WebApp.initDataUnsafe.first_name + ', ваши уведомления:'
 document.querySelector('body').appendChild(data)
 
 async function getCompanies() {
