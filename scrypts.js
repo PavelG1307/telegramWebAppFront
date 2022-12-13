@@ -11,10 +11,7 @@ async function getCompanies() {
     url: url + '/company',
     params: { userId }
   })
-  if (res.status === 200) {
-    return fillPage(res.data)
-  }
-  console.log(res)
+  return fillPage(res.data)
 }
 
 async function fillPage(data) {
