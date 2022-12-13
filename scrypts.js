@@ -1,6 +1,10 @@
 const url = 'http://localhost:3000/api/v1'
 const userId = 12345
 
+const data = document.createElement('div')
+data.innerText = JSON.stringify(window.Telegram.WebApp.initDataUnsafe)
+document.querySelector('body').appendChild(data)
+
 async function getCompanies() {
   const res = await axios({
     method: 'get',
