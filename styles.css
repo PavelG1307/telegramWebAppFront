@@ -17,7 +17,9 @@ body {
 .company {
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  align-self: center;
 }
 
 .row {
@@ -41,7 +43,8 @@ body {
 
 .company_title {
   font-size: 1.2rem;
-  margin-bottom: 70px;
+  margin-bottom: 35px;
+  margin-top: 35px;
 }
 
 .branch_title {
