@@ -1,6 +1,6 @@
 // const url = 'http://localhost:3000/api/v1'
 const url = 'https://fifthfloor.site/api/v1'
-const userId = 12345
+const userId = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id || 12345
 try {
   const data = document.querySelector('.title')
   data.innerText = window.Telegram.WebApp.initDataUnsafe.user.first_name + ', ваши уведомления:'
