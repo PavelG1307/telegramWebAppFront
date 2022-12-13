@@ -1,0 +1,73 @@
+* {
+  font-size: 50px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 90vw;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 100px;
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.branches{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30px;
+  padding-left: 30px;
+  border-left: solid 2px #000;
+}
+
+.company_branch{
+  display: flex;
+  justify-content: space-between;
+}
+
+.company_title {
+  font-size: 1.2rem;
+  margin-bottom: 70px;
+}
+
+.branch_title {
+  margin-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+input {
+  height: 70px;
+  width: 70px;
+  border-radius: 100px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 10%;
+  margin-bottom: 0 !important;
+  background-color: rgb(227, 156, 156);
+}
+
+input:checked {
+  background-color: rgb(156, 227, 182);
+}
