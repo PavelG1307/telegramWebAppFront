@@ -75,5 +75,8 @@ async function changeSubscribe(event) {
   await axios(options)
   return getCompanies()
 }
-
-getCompanies()
+try{
+  getCompanies()
+} catch(e) {
+  document.querySelector('.title').innerText = e
+}
