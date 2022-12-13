@@ -2,7 +2,7 @@ const url = 'http://localhost:3000/api/v1'
 const userId = 12345
 
 const data = document.querySelector('.title')
-data.innerText = window.Telegram.WebApp.initDataUnsafe.first_name + ', ваши уведомления:'
+data.innerText = window.Telegram.WebApp.initDataUnsafe.user.first_name + ', ваши уведомления:'
 
 async function getCompanies() {
   const res = await axios({
