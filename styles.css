@@ -10,7 +10,7 @@ body {
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin: 100px;
 }
 
@@ -45,13 +45,13 @@ body {
 }
 
 .branch_title {
-  margin-bottom: 25px;
+  margin-top: 25px;
   margin-bottom: 25px;
 }
 
 input {
-  height: 70px;
-  width: 70px;
+  height: 50px;
+  width: 50px;
   border-radius: 100px;
   vertical-align: middle;
   border: 1px solid #ddd;
