@@ -1,10 +1,10 @@
 // const url = 'http://localhost:3000/api/v1'
 const url = 'https://fifthfloor.site/api/v1'
 const userId = 12345
-
-const data = document.querySelector('.title')
-data.innerText = window.Telegram.WebApp.initDataUnsafe.user.first_name + ', ваши уведомления:'
-
+try {
+  const data = document.querySelector('.title')
+  data.innerText = window.Telegram.WebApp.initDataUnsafe.user.first_name + ', ваши уведомления:'
+} catch {}
 async function getCompanies() {
   const res = await axios({
     method: 'get',
