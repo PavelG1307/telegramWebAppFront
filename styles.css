@@ -52,6 +52,7 @@ body {
 input {
   height: 40px;
   width: 40px;
+  align-self: center;
   border-radius: 100px;
   vertical-align: middle;
   border: 1px solid #ddd;
