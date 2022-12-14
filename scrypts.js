@@ -86,5 +86,5 @@ if (isTelegram) {
 // if (true) {
   getCompanies()
 } else {
-  document.querySelector('.title').innerText = 'Это не телеграм'
+  document.querySelector('.title').innerText = 'Это не телеграм!'
 }
