@@ -1,5 +1,10 @@
 // const url = 'http://localhost:3000/api/v1'
 const url = 'https://fifthfloor.site/api/v1'
+const isTelegram = 'Telegram' in window
+  && 'WebApp' in window.Telegram
+  && 'initDataUnsafe' in window.Telegram.WebApp
+  && 'user' in window.Telegram.WebApp.initDataUnsafe
+
 const userId = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id || 12345
 try {
   const data = document.querySelector('.title')
@@ -76,8 +81,9 @@ async function changeSubscribe(event) {
   await axios(options)
   return getCompanies()
 }
-try{
+
+if (isTelegram) {
   getCompanies()
-} catch(e) {
-  document.querySelector('.title').innerText = e
+} else {
+  document.querySelector('.title').innerText = 'Это не телеграм'
 }
