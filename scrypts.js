@@ -82,7 +82,8 @@ async function changeSubscribe(event) {
   return getCompanies()
 }
 
-if (isTelegram) {
+// if (isTelegram) {
+if (true) {
   getCompanies()
 } else {
   document.querySelector('.title').innerText = 'Это не телеграм'

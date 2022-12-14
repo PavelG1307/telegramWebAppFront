@@ -1,3 +1,6 @@
+* {
+  font-size: calc((1vh + 1vw)*1.5);
+}
 body {
   display: flex;
   flex-direction: column;
@@ -54,19 +57,22 @@ body {
 }
 
 input {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   align-self: center;
   border-radius: 100px;
   vertical-align: middle;
   border: 1px solid #ddd;
-  appearance: none;
-  -webkit-appearance: none;
+  /* appearance:inherit; */
+  /* -webkit-appearance: none; */
   outline: none;
   cursor: pointer;
-  background-color: rgb(227, 156, 156);
+}
+
+.branches input {
+  box-shadow: 10px 5px 10px rgb(204, 204, 204)
 }
 
 input:checked {
-  background-color: rgb(156, 227, 182);
+  /* background-color: rgb(156, 227, 182); */
 }
