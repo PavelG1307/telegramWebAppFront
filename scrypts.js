@@ -8,7 +8,7 @@ const isTelegram = 'Telegram' in window
 const userId = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id || 12345
 try {
   const data = document.querySelector('.title')
-  data.innerText = window.Telegram.WebApp.initDataUnsafe.user.first_name + ', ваши уведомления:'
+  data.innerText = window.Telegram.WebApp.initDataUnsafe.user.first_name + ', Ваши уведомления:'
 } catch {}
 async function getCompanies() {
   const res = await axios({
