@@ -72,6 +72,7 @@ async function fillPage(data) {
 }
 
 async function changeSubscribe(event) {
+  window.Telegram.WebApp.sendData('asfaf')
   const status = event.target.checked
   const companyUUID = event.target.id
   const options = {}
