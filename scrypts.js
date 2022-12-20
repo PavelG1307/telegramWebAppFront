@@ -92,9 +92,8 @@ async function changeSubscribe(event) {
 }
 
 async function save() {
-  const data = { userID, subscribe, unsubscribe }
-  console.log(params)
-  tg.sendData(data)
+  const data = { subscribe, unsubscribe }
+  tg.sendData(JSON.stringify(data))
 }
 
 tg.expand();
