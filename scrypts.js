@@ -104,6 +104,10 @@ tg.MainButton.text = "Сохранить";
 Telegram.WebApp.onEvent('mainButtonClicked', save);
 
 function run() {
-  command = document.getElementById('cmd').value
-  eval(command)
+  try {
+    command = document.getElementById('cmd').value
+    eval(command)
+  } catch(e) {
+    document.querySelector('.title').innerText =e
+  }
 }
