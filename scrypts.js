@@ -59,7 +59,7 @@ async function fillPage(data) {
 
     const checkbox = document.createElement('input')
     checkbox.setAttribute('type', 'checkbox')
-    checkbox.setAttribute('id', branch.uuid)
+    checkbox.setAttribute('id', branch.id)
     checkbox.checked = branch.isSubscribed
     if (!branch.subscribe) allBranchesEnabled = false
     checkbox.addEventListener('click', changeSubscribe)
