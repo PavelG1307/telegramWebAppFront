@@ -61,6 +61,9 @@ async function fillPage(data) {
     checkbox.setAttribute('type', 'checkbox')
     checkbox.setAttribute('id', branch.id)
     checkbox.checked = branch.isSubscribed
+    if (branch.isSubscribed) {
+      subscribe.push(Number(branch.id))
+    }
     if (!branch.subscribe) allBranchesEnabled = false
     checkbox.addEventListener('click', changeSubscribe)
     branchEl.appendChild(checkbox)
