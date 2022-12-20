@@ -1,17 +1,24 @@
 // const url = 'http://localhost:3000/api/v1'
-const url = 'https://fifthfloor.site/api/v1'
+let url = null
 const urlParams = new URLSearchParams(window.location.search);
-const userId = urlParams.get('userID');
-console.log(userId)
+const userID = urlParams.get('userID');
+const tg = window.Telegram.WebApp;
+
 async function getNetworks() {
-  // const res = await axios({
-  //   method: 'get',
-  //   url: url + '/network',
-  //   params: { userId }
-  // })
-  return fillPage(testData)
+  url = document.getElementById('url').value
+  console.log(url);
+  const res = await axios({
+    method: 'get',
+    url: url + 'subscribe/networks',
+    params: { userID },
+    headers: {
+      "ngrok-skip-browser-warning": "true",
+    }
+  })
+  return fillPage(res.data)
 }
-document.querySelector('.title').innerText =`user: ${userId}`
+
+document.querySelector('.title').innerText =`user: ${userID}`
 async function fillPage(data) {
   const containerEl = document.querySelector('.container')
   containerEl.innerHTML = ''
@@ -85,92 +92,13 @@ async function changeSubscribe(event) {
 }
 
 async function save() {
-  const params = { userId, subscribe, unsubscribe }
+  const data = { userID, subscribe, unsubscribe }
   console.log(params)
+  tg.sendData(data)
 }
 
-const testData = {
-  "Page": 1,
-  "MaxPage": 56,
-  "Networks": {
-    "1128": "99 евро",
-    "1150": "Armani Exchange",
-    "1153": "Alessandro Manzoni",
-    "1189": "ALOHA",
-    "144": "33 комода",
-    "429": "365+",
-    "439": "12 Storeez",
-    "700": "2smoke",
-    "761": "33 комода интернет-магазин",
-    "886": "BAON"
-  },
-  "NetworkSlice": [
-    {
-      "id": 439,
-      "name": "12 Storeez",
-      "uuid": "f1320985-7452-4f3e-bf69-547d682f455d",
-      "isSubscribed": true
-    },
-    {
-      "id": 144,
-      "name": "33 комода",
-      "uuid": "f2591675-2654-4cb0-be34-dba0db861ca9",
-      "isSubscribed": true
-    },
-    {
-      "id": 1189,
-      "name": "ALOHA",
-      "uuid": "d38afcac-e116-4ff0-8454-c700fbfaf489",
-      "isSubscribed": true
-    },
-    {
-      "id": 700,
-      "name": "2smoke",
-      "uuid": "047686fc-3636-451f-8e0d-aecd5967506a",
-      "isSubscribed": false
-    },
-    {
-      "id": 761,
-      "name": "33 комода интернет-магазин",
-      "uuid": "fcd459e4-6e6f-470e-afde-c6922733755b",
-      "isSubscribed": false
-    },
-    {
-      "id": 429,
-      "name": "365+",
-      "uuid": "5d18609a-ec5a-40a4-b7f4-6861ea608193",
-      "isSubscribed": false
-    },
-    {
-      "id": 1128,
-      "name": "99 евро",
-      "uuid": "bd7db909-f02c-4b57-877d-4cc20122087d",
-      "isSubscribed": false
-    },
-    {
-      "id": 1153,
-      "name": "Alessandro Manzoni",
-      "uuid": "9479a93b-1666-478f-810d-00f286bef822",
-      "isSubscribed": false
-    },
-    {
-      "id": 1150,
-      "name": "Armani Exchange",
-      "uuid": "3e632871-d11e-43b7-9904-9e37d976302e",
-      "isSubscribed": false
-    },
-    {
-      "id": 886,
-      "name": "BAON",
-      "uuid": "7645cd96-ac6d-4073-bddd-99239a244e4b",
-      "isSubscribed": false
-    }
-  ],
-  "SubscribedNetworks": {
-    "1189": true,
-    "144": true,
-    "439": true
-  }
-}
+tg.expand();
+tg.MainButton.isVisible = true
 
-getNetworks()
+tg.MainButton.text = "Сохранить";
+Telegram.WebApp.onEvent('mainButtonClicked', save);

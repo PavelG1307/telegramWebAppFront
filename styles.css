@@ -56,7 +56,7 @@ body {
   margin-bottom: 25px;
 }
 
-input {
+input[type="checkbox"] {
   height: 50px;
   width: 50px;
   align-self: center;
@@ -69,10 +69,17 @@ input {
   cursor: pointer;
 }
 
+input[type="text"] {
+  width: 75%;
+}
+
+button{
+  margin-bottom: 20px;
+}
 .branches input {
   box-shadow: 10px 5px 10px rgb(204, 204, 204)
 }
 
-input:checked {
+input:checked[type="checkbox"] {
   /* background-color: rgb(156, 227, 182); */
 }
