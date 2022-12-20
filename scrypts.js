@@ -75,18 +75,18 @@ const unsubscribe = []
 
 async function changeSubscribe(event) {
   const status = event.target.checked
-  const networkUUID = event.target.id
+  const networkID = int(event.target.id)
   if (status) {
-    if (unsubscribe.includes(networkUUID)) {
-      delete unsubscribe['networkUUID']
+    if (unsubscribe.includes(networkID)) {
+      delete unsubscribe[networkID]
     } else {
-      subscribe.push(networkUUID)
+      subscribe.push(networkID)
     }
   } else {
-    if (subscribe.includes(networkUUID)) {
-      delete subscribe['networkUUID']
+    if (subscribe.includes(networkID)) {
+      delete subscribe[networkID]
     } else {
-      unsubscribe.push(networkUUID)
+      unsubscribe.push(networkID)
     }
   }
 }
