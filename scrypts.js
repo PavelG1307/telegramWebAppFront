@@ -75,7 +75,7 @@ const unsubscribe = []
 
 async function changeSubscribe(event) {
   const status = event.target.checked
-  const networkID = int(event.target.id)
+  const networkID = Number(event.target.id)
   if (status) {
     if (unsubscribe.includes(networkID)) {
       delete unsubscribe[networkID]
@@ -93,6 +93,7 @@ async function changeSubscribe(event) {
 
 async function save() {
   const data = { subscribe, unsubscribe }
+  console.log(data)
   tg.sendData(JSON.stringify(data))
 }
 
