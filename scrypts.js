@@ -9,7 +9,7 @@ async function getNetworks() {
   console.log(url);
   const res = await axios({
     method: 'get',
-    url: url + 'subscribe/networks',
+    url: url + 'networks',
     params: { userID },
     headers: {
       "ngrok-skip-browser-warning": "true",
