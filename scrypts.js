@@ -111,3 +111,5 @@ function run() {
     document.querySelector('.title').innerText =e
   }
 }
+
+getNetworks()
