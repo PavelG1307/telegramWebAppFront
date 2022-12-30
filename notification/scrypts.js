@@ -1,5 +1,5 @@
 document.querySelector('#add_btn').addEventListener('click', () => {
-    document.location.href = './new/networks'
+    document.location.href = './settings'
 })
 
 document.querySelector('#delete').addEventListener('click', (event) => {

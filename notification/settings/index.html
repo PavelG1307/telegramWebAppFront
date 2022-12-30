@@ -11,12 +11,15 @@
 </head>
 
 <body class="">
-  <div id="main" class="max-w-[80%] mx-auto">
+  <div id="main_window" class="hidden max-w-[80%] mx-auto">
     <header class="container mx-auto text-center pt-5 font-medium text-3xl">Настройка отзывов</header>
     <div class="container flex flex-col space-y-8 mt-6">
       <div>
-        <div class="">Название группы</div>
-        <input type="text" placeholder="Группа 1" class="form-control
+        <div class="flex">
+          Название группы
+          <div class="text-red-400">*</div>
+        </div>
+        <input id="name_group" type="text" placeholder="Группа 1" class="form-control
     w-full
     mt-1
     px-3
@@ -118,7 +121,7 @@
           Платформа
         </label>
         <div class="w-full mt-1" onclick="openProviders()">
-          <div class="cursor-pointer absolute right-[14vw] mt-[.5%] text-2xl text-[#63bf9a]">+</div>
+          <div id="icon_title_provider" class="cursor-pointer absolute right-[14vw] mt-[.5%] text-2xl text-[#63bf9a]">+</div>
           <input type="text" id="title_providers" placeholder="Выберите платформу" disabled
             class="border-2 p-2 w-full rounded bg-white cursor-pointer">
         </div>
@@ -166,7 +169,7 @@
         <label class="">
           Филиалы
         </label>
-        <div class="w-full mt-1" onclick="openCompanies()">
+        <div class="w-full mt-1" onclick="openWindow('companies')">
           <div class="cursor-pointer absolute right-[14vw] mt-[.5%] text-2xl text-[#63bf9a]">+</div>
           <input type="text" id="title_companies" placeholder="Выберите филиалы" disabled
             class="border-2 p-2 w-full rounded bg-white cursor-pointer">
@@ -174,6 +177,19 @@
       </div>
     </div>
   </div>
+
+  <div id="networks_window" class="">
+    <div class="flex justify-center items-center w-full mb-[3%] mt-5">
+      <div class="flex flex-col justify-center w-[80vw] h-[45px]">
+        <img src="./assets/img/search.png" class="w-[20px] absolute ml-4 opacity-50" alt="">
+        <input type="text" id="search_input_networks" placeholder="Начните вводить название сети"
+          class="w-full h-full text-sm rounded-full border  indent-12">
+      </div>
+    </div>
+    <div id="container" class="max-w-full h-[84vh] flex flex-col items items-center mx-auto overflow-scroll">
+    </div>
+  </div>
+
   <div id="companies_window" class="hidden">
     <div id="tabs" class="cursor-pointer h-16 w-full justify-around flex items-center border-b">
       <div id="companies_tab" onclick="openTab('companies')"
@@ -197,7 +213,7 @@
       <div class="flex justify-center items-center w-full mb-[3%] mt-5">
         <div class="flex flex-col justify-center w-[80vw] h-[45px]">
           <img src="./assets/img/search.png" class="w-[20px] absolute ml-4 opacity-50" alt="">
-          <input type="text" id="search_input" placeholder="Начните вводить название филиала"
+          <input type="text" id="search_input_companies" placeholder="Начните вводить название филиала"
             class="w-full h-full rounded-full border  indent-12">
         </div>
       </div>
@@ -212,10 +228,12 @@
       </div>
     </div>
     <div class="tab hidden" id="city">
-      <div class="font-bold text-3xl text-[#7a5cc9] w-full text-center h-[80vh] flex justify-center items-center">Раздел в разработке</div>
+      <div class="font-bold text-3xl text-[#7a5cc9] w-full text-center h-[80vh] flex justify-center items-center">Раздел
+        в разработке</div>
     </div>
     <div class="tab hidden" id="divisions">
-      <div class="font-bold text-3xl text-[#7a5cc9] w-full text-center h-[80vh] flex justify-center items-center">Раздел в разработке</div>
+      <div class="font-bold text-3xl text-[#7a5cc9] w-full text-center h-[80vh] flex justify-center items-center">Раздел
+        в разработке</div>
     </div>
   </div>
 </body>
