@@ -4,10 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script defer src="./scrypts.js"></script>
-  <link href="../.././../css/styles.css" rel="stylesheet">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/axios.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/networks.js"></script>
+  <script src="./assets/js/telegram.js"></script>
+  <script src="./assets/js/companies.js"></script>
+  <script src="./assets/js/windows.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="./assets/js/scripts.js"></script>
+  <link href="../.././../css/styles.css" rel="stylesheet">
 </head>
 
 <body class="">
@@ -126,42 +134,6 @@
             class="border-2 p-2 w-full rounded bg-white cursor-pointer">
         </div>
         <div id="list_providers" class="hidden flex flex-col w-full border-solid border-2 rounded-br-md rounded-bl-md">
-          <div id="field_prov_1" onclick="selectProvider(1)"
-            class="hover:bg-gray-50 ease-in-out cursor-pointer border-b-2 py-3 flex items-center justify-between border-solid border-bottom-gray-300">
-            <label class="ml-4 form-check-label flex" for="provider1">
-              <img
-                src="https://sun6-21.userapi.com/s/v1/if1/upYY30zwD3vU6FtWlamVKUWphrDw-4FZa7_WmQ6_1y8W7jVssGoZeNapWeAr1w7CYBpFngMJ.jpg?size=960x960&quality=96&crop=0,0,960,960&ava=1"
-                alt="" class="w-5 h-5 mr-2">
-              Яндекс
-            </label>
-            <input
-              class="hover:bg-gray-50 ease-in-out mr-4 h-5 w-5 border rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-right mr-2 cursor-pointer"
-              type="checkbox" id="prov_1" value="option1">
-          </div>
-
-          <div id="field_prov_2" onclick="selectProvider(2)"
-            class="hover:bg-gray-50 ease-in-out cursor-pointer border-b-2 py-3 flex items-center justify-between border-solid border-bottom-gray-300">
-            <label class="ml-4 form-check-label flex" for="provider1">
-              <img src="https://i.pinimg.com/originals/1f/4f/43/1f4f43227e28b87d4712a24c28cde98d.png" alt=""
-                class="w-5 h-5 mr-2">
-              Google
-            </label>
-            <input
-              class="mr-4 h-5 w-5 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-right mr-2 cursor-pointer"
-              type="checkbox" id="prov_2" value="option1">
-          </div>
-
-          <div id="field_prov_3" onclick="selectProvider(3)"
-            class="hover:bg-gray-50 ease-in-out cursor-pointer py-3 flex items-center justify-between">
-            <label class="ml-4 form-check-label flex" for="provider1">
-              <img src="https://images.spasibovsem.ru/catalog/original/2gis-dlya-windows-otzyvy-1358286497.png" alt=""
-                class="w-5 h-5 mr-2">
-              2ГИС
-            </label>
-            <input
-              class="mr-4 h-5 w-5 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-right mr-2 cursor-pointer"
-              type="checkbox" id="prov_3" value="option1">
-          </div>
         </div>
       </div>
 
@@ -186,7 +158,7 @@
           class="w-full h-full text-sm rounded-full border  indent-12">
       </div>
     </div>
-    <div id="container" class="max-w-full h-[84vh] flex flex-col items items-center mx-auto overflow-scroll">
+    <div id="networks_list" class="max-w-full h-[84vh] flex flex-col items items-center mx-auto overflow-scroll">
     </div>
   </div>
 
